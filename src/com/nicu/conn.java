@@ -8,22 +8,21 @@ public class conn {
     private Statement statmt;
     private PreparedStatement pstmt;
 
-    // --------ПОДКЛЮЧЕНИЕ К БАЗЕ ДАННЫХ--------
+    
     public conn() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\SweetMilk\\Desktop\\ReadCSV\\sqlite\\X.db");
         conn.setAutoCommit(false);
-        System.out.println("База Подключена!");
-    }
+           }
 
-    // --------Создание таблицы--------
+    
     public void CreateDB() throws SQLException {
         statmt = conn.createStatement();
         statmt.execute("CREATE TABLE if not exists 'X' ('A' text , 'B' text, 'C' text,'D' text,'E' text,'F' text, 'G' text, 'H' text, 'I' text, 'J' text);");
-        System.out.println("Таблица создана или уже существует.");
+       
     }
 
-    // --------Заполнение таблицы--------
+  
     public void WriteDB(String A, String B, String C, String D, String E, String F, String G, String H, String I, String J) throws SQLException {
         String sql = "INSERT INTO X(A,B,C,D,E,F,G,H,I,J) VALUES (?,?,?,?,?,?,?,?,?,?)";
         pstmt = conn.prepareStatement(sql);
@@ -40,12 +39,11 @@ public class conn {
         pstmt.executeUpdate();
     }
 
-    // --------Закрытие--------
+    
     public void CloseDB() throws SQLException {
         conn.commit();
         conn.close();
-        statmt.close();
-        System.out.println("Соединения закрыты");
+        statmt.close(); 
     }
 
 }
