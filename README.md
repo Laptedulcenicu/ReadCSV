@@ -14,3 +14,4 @@ Opencsv,  commons-lang3-3.6  helped me to open,read and write csv file  and sqli
 Opencsv has the possibility automatic to detect a comma and to double qouted a element.
 While I read the Interview-task-data-osh.csv I verifaied if it contains at least  an empty row , if it was true than data is written in bad-data-timestamp.csv and after this begin a new iteration, but is is not true the data is written in sqlite database.
 The statistics was written in statistics.log
+To insert faster the data in sqlite data base i used transaction. 
