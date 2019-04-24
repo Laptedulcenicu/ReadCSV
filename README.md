@@ -1,5 +1,5 @@
 # ReadCSV
-instructions to run your code:
+instructions to run the code:
 1) Set where is located Interview-task-data-osh.csv you can find in Main1 class
 2) Set where will be created bad-data-timestamp.csv you can find  in Main1 class
 3) Set where will be created statistics.log you can find in Main1 class
